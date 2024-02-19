@@ -41,11 +41,26 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
+        $selectedRole = $request->input('role');
+
+            if ($selectedRole == 'driver') {
+                $user->assignRole('driver');
+            } elseif ($selectedRole == 'passenger') {
+                $user->assignRole('passenger');
+            } elseif ($selectedRole == 'admin') {
+                $user->assignRole('admin');
+            }
+        
+          
 
         event(new Registered($user));
 
         Auth::login($user);
 
         return redirect(RouteServiceProvider::HOME);
-    }
-}
+    }}
+
+  
+
+    
+
