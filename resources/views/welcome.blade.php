@@ -78,6 +78,7 @@
                 </div>
             </nav>
 
+<<<<<<< HEAD
             <div
                 class="absolute left-0 flex-col items-center justify-center hidden w-full pb-8 mt-48 border-b border-gray-200 md:relative md:w-auto md:bg-transparent md:border-none md:mt-0 md:flex-row md:p-0 md:items-end md:flex md:justify-between">
                 
@@ -211,6 +212,21 @@
                                 </g>
                             </g>
                         </svg>
+=======
+            <div class="main-banner" id="top">
+                <div class="container" style="margin-top: -120px">
+                  <div class="row">
+                    <div class="col-lg-7">
+                      <div class="caption header-text">
+                        <h6>Mon Grand Taxi</h6>
+                        <div class="line-dec"></div>
+                        <h4>Welcome <em>Into Our</em> World <span >Mon Grand Taxi</span></h4>
+                        <p>Are you looking for a reliable and professional taxi service? Look no further! [Mon Grand Taxi] is here to provide you with top-notch transportation solutions. Our dedicated team of experienced and courteous taxi drivers is committed to ensuring a safe and comfortable journey for every passenger.</p>
+                        <div class="main-button scroll-to-section"><a href="#services">Discover More</a></div>
+                        <span>or</span>
+                        <div class="second-button"><a href="">Check our FAQs</a></div>
+                      </div>
+>>>>>>> 52ea81c8b3720ecd5be6ec7ab26ac67758154993
                     </div>
                 </div>
                 <svg class="absolute left-0 max-w-md mt-24 -ml-64 left-svg" viewBox="0 0 423 423"

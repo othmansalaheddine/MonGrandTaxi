@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignId('route_id')->constrained('routes')->onDelete('cascade');
             $table->timestamps();
         });
-    }               
+    }                            
         
 
     /**

@@ -15,7 +15,12 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
+<<<<<<< HEAD
+    <body class="font-sans antialiased" style="background-image: linear-gradient(to left, rgb(22, 22, 22), rgb(0, 0, 0));">
+=======
     <body class="font-sans antialiased" style="background-image: linear-gradient(to left, rgb(210, 210, 210), rgb(171, 87, 199));">
+        @include('layouts.navigation')
+>>>>>>> 52ea81c8b3720ecd5be6ec7ab26ac67758154993
 
         <div class="max-w-7xl mx-auto py-6 px-4 " >
             <form action="{{ route('driver.update', $user->id) }}" method="post" enctype="multipart/form-data">
@@ -23,51 +28,52 @@
                 @method('PUT')
     
                 <div>
-                    <label class="form-label" style="font-family: Georgia, serif; text-decoration: underline">Profile Picture</label>
+                    <label class="form-label" style="font-family: 'bernard MT Condensed';color: rgb(229, 229, 229)">Profile Picture</label>
                     @if($user->profilepicture)
-                        <img src="{{ asset($user->profilepicture) }}" alt="Profile Picture" width="200" height="200" style="margin-left: 100px" >
+                        <img src="{{ asset($user->profilepicture) }}" alt="Profile Picture" width="200" height="200" style="margin-left: 9rem" >
                     @else
-                        <p>No image available</p>
+                        <p style="color: ">No image available</p>
                     @endif
                 </div>
                 <div>
-                    <label class="form-label" style="font-family: Georgia, serif;">Name</label>
+                    <label class="form-label" style="font-family: 'FORCED SQUARE';color: rgb(229, 229, 229)">Name</label>
                     <input class="form-control" type="text" name="name" placeholder="Name" value="{{ $user->name }}">
                 </div>
                 <div>
-                    <label class="form-label" style="font-family: Georgia, serif;">Email</label>
+                    <label class="form-label" style="font-family: 'FORCED SQUARE';color: rgb(229, 229, 229)">Email</label>
                     <input class="form-control" type="text" name="email" placeholder="Email" value="{{ $user->email }}">
                 </div>
                 <div>
-                    <label class="form-label" style="font-family: Georgia, serif;">Phone</label>
+                    <label class="form-label" style="font-family: 'FORCED SQUARE';color: rgb(229, 229, 229)">Phone</label>
                     <input class="form-control" type="text" name="phone" placeholder="Phone" value="{{ $user->phone }}">
                 </div>
                 <div>
-                    <label class="form-label" style="font-family: Georgia, serif;">Description</label>
+                    <label class="form-label" style="font-family: 'FORCED SQUARE';color: rgb(229, 229, 229)">Description</label>
                     <input class="form-control" type="text" name="description" placeholder="Description" value="{{ $user->description }}">
                 </div>
                 <div>
-                    <label class="form-label" style="font-family: Georgia, serif;">immatriculation</label>
+                    <label class="form-label" style="font-family: 'FORCED SQUARE';color: rgb(229, 229, 229)">immatriculation</label>
                     <input class="form-control" type="text" name="immatriculation" placeholder="immatriculation" value="{{ $user->immatriculation }}">
                 </div>
                 <div>
-                    <label class="form-label" style="font-family: Georgia, serif;">car_type</label>
+                    <label class="form-label" style="font-family: 'FORCED SQUARE';color: rgb(229, 229, 229)">car_type</label>
                     <input class="form-control" type="text" name="car_type" placeholder="car_type" value="{{ $user->car_type }}">
                 </div>
                 <div>
-                    <label class="form-label" style="font-family: Georgia, serif;">payment</label>
+                    <label class="form-label" style="font-family: 'FORCED SQUARE';color: rgb(229, 229, 229)">payment</label>
                     <input class="form-control" type="text" name="payment" placeholder="payment" value="{{ $user->payment }}">
                 </div>
                 <div>
-                    <label class="form-label" style="font-family: Georgia, serif;">New Image for profile</label>
+                    <label class="form-label" style="font-family: 'FORCED SQUARE';color: rgb(229, 229, 229)">New Image for profile</label>
                     <input class="form-control" type="file" name="image">
                 </div>
-                <div style="font-family: Georgia, serif; margin-top: 20px">
+                <div style="font-family: 'FORCED SQUARE';color: rgb(229, 229, 229) margin-top: 20px">
                     <input class="btn btn-primary" type="submit" value="Done" />
                 </div>
             </form>
         </div>
     
+        @include('layouts.footer')
 
         <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
     </body>

@@ -12,28 +12,54 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+<<<<<<< HEAD
                     <x-nav-link style="color: rgb(0, 0, 0);font-weight:bold; font-size: 1rem " :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+=======
+                    <x-nav-link style="color: rgb(255, 255, 255); font-size: 1rem; font-family: 'Times New Roman', Times, serif" :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+>>>>>>> 52ea81c8b3720ecd5be6ec7ab26ac67758154993
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
                 @role('admin')
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+<<<<<<< HEAD
                     <x-nav-link style="color: rgb(255, 255, 255);font-weight:bold; font-size: 1rem" :href="route('admin.index')" :active="request()->routeIs('admin.index')">
+=======
+                    <x-nav-link style="color: rgb(255, 255, 255);font-family: 'Times New Roman', Times, serif" :href="route('admin.index')" :active="request()->routeIs('admin.index')">
+>>>>>>> 52ea81c8b3720ecd5be6ec7ab26ac67758154993
                         {{ __('Admin') }}
                     </x-nav-link>
                 </div>
             @else
                 @role('driver')
                     <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+<<<<<<< HEAD
                         <x-nav-link style="color: rgb(69, 84, 15);font-weight:bold; font-size: 1rem" :href="route('driver.index')" :active="request()->routeIs('driver.index')">
+=======
+                        <x-nav-link style="color: rgb(255, 255, 255); font-family: 'Times New Roman', Times, serif" :href="route('driver.index')" :active="request()->routeIs('driver.index')">
+>>>>>>> 52ea81c8b3720ecd5be6ec7ab26ac67758154993
                             {{ __('Driver') }}
                         </x-nav-link>
                     </div>
                 @else
                     @role('passenger')
                         <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+<<<<<<< HEAD
                             <x-nav-link style="color: rgb(0, 0, 0); font-weight:bold; font-size: 1rem" :href="route('passenger.home')" :active="request()->routeIs('passenger.home')">
+=======
+                            <x-nav-link style="color: rgb(255, 255, 255); font-weight:bold; font-size: 1rem;font-family: 'Times New Roman', Times, serif" :href="route('passenger.home')" :active="request()->routeIs('passenger.home')">
+>>>>>>> 52ea81c8b3720ecd5be6ec7ab26ac67758154993
                                 {{ __('Passenger') }}
+                            </x-nav-link>
+                        </div>
+                        <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                            <x-nav-link style="color: rgb(255, 255, 255); font-weight:bold; font-size: 1rem; font-family: 'Times New Roman', Times, serif" :href="route('passenger.myreservation')" :active="request()->routeIs('passenger.myreservation')">
+                                {{ __('My Reservations') }}
+                            </x-nav-link>
+                        </div>
+                        <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                            <x-nav-link style="color: rgb(255, 255, 255); font-weight:bold; font-size: 1rem; font-family: 'Times New Roman', Times, serif" :href="route('passenger.myhistory')" :active="request()->routeIs('passenger.myhistory')">
+                                {{ __('My History') }}
                             </x-nav-link>
                         </div>
                     @endrole

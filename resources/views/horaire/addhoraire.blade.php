@@ -15,7 +15,7 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased" style="background-image: linear-gradient(to left, rgb(210, 210, 210), rgb(171, 87, 199));">
+    <body class="font-sans antialiased" style="background-image: linear-gradient(to left, rgb(96, 96, 96), rgb(0, 0, 0));">
 
         @include('layouts.navigation')
 
@@ -55,6 +55,7 @@
 
     </div>
 
+    @include('layouts.footer')
 
 
 

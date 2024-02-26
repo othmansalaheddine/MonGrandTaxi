@@ -8,7 +8,10 @@ use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\DriverController;
 use App\Http\Controllers\passengerController;
 use App\Http\Controllers\HoraireController;
-
+use App\Http\Controllers\OrderController;
+use App\Models\passenger;
+use Spatie\Permission\Contracts\Role;
+use App\Http\Controllers\RateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +40,7 @@ Route::middleware('auth')->group(function () {
 
 
 Route::middleware(['auth', 'role:admin'])->name('admin.')->prefix('admin')->group(function () {
-    Route::get('/' , [IndexController::class , 'index'])->name('index');
+    Route::get('/' , [passengerController::class , 'index'])->name('index');
     
     Route::get('/drivers' , [DriverController::class , 'showUsersWithDriverRole'])->name('drivers.index');
     Route::resource('/passengers' , PassengerController::class);
@@ -46,8 +49,12 @@ Route::middleware(['auth', 'role:admin'])->name('admin.')->prefix('admin')->grou
 
     Route::delete('/drivers/{user}', [DriverController::class, 'destroy'])->name('drivers.destroy');
 
+ Route::post('/passengers/{user}', [passengerController::class, 'destroy'])->name('passengers.destroy');
+
+ Route::get('/orders', [OrderController::class, 'index'])->name('order.index');
 
 });
+
 
 
 // Route::get('/admin',[RolesController::class ,'index'])->name('admin.index');
@@ -77,9 +84,21 @@ Route::put('/{user}/updatestatus', [DriverController::class ,'updatestatus'])->n
 
 
 // Route::get('/driver',[DriverController::class ,'index'])->name('driver.index');
+
 Route::middleware(['auth', 'role:passenger'])->name('passenger.')->prefix('passenger')->group(function () {
     Route::get('/' , [PassengerController::class , 'home'])->name('home');
+    Route::get('/myreservation' , [PassengerController::class , 'myreservation'])->name('myreservation');
+    Route::put('/{booking}/updatestatus', [PassengerController::class ,'cancelReservation'])->name('updatestatus');
+
+    Route::get('/myhistory' , [PassengerController::class , 'myhistory'])->name('myhistory');
+
+    Route::post('/search', [PassengerController::class, 'search'])->name('search');
+
+
+    Route::get('/rate/{rate}',[RateController::class,'index'])->name('rate.index');
 });
+
+Route::post('/passenger/reserve/{horaire}', [PassengerController::class, 'reserve'])->name('passenger.reserve');
 
 
 // Route::get('/driver', [DriverController::class, 'showUsersWithDriverRole']);
